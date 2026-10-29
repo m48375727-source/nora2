@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Theme color tokens - customizable per server and user */
+  --bg-base: #000000;
+  --bg-surface: #05070d;
+  --bg-elevated: #0a0f1c;
+  --bg-overlay: #10172a;
+  --border-subtle: #111a2e;
+  --border-hover: #1e2d4e;
+  
+  --accent-primary: #2563ff;
+  --accent-hover: #3b82f6;
+  --accent-light: #60a5fa;
+  --accent-glow: rgba(37, 99, 255, 0.25);
+  --accent-glow-strong: rgba(37, 99, 255, 0.45);
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  --chat-density-py: 0.35rem;
+  --chat-font-size: 0.9375rem;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+}
+
+/* Custom slick dark scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #111a2e;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1e2d4e;
+}
+
+/* Voice speaking animated ring */
+@keyframes speakingPulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--accent-glow-strong);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(37, 99, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 255, 0);
+  }
+}
+
+.voice-speaking-ring {
+  animation: speakingPulse 1.2s infinite ease-out;
+  border-color: var(--accent-light) !important;
+}
+
+.accent-glow-hover:hover {
+  box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.accent-glow-active {
+  box-shadow: 0 0 18px var(--accent-glow-strong);
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(0.6) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(-20px) scale(1.1) rotate(10deg);
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-160px) scale(1.3) rotate(-20deg);
+    opacity: 0;
+  }
+}
+
+.animate-float-up {
+  animation: floatUp 1.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+

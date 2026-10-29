@@ -1,0 +1,6 @@
+{
+  "name": "Nocturne",
+  "description": "3D sesli mekanlar, YouTube birlikte izleme sineması, gerçek zamanlı topluluk ve forum platformu.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
